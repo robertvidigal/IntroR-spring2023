@@ -1,0 +1,253 @@
+---
+title: "Variable Types"
+subtitle: "and Data Structures"
+author: "Robert Vidigal"
+institute: "Introduction to R DEMO \n Stevens Institute of Technology"
+date: "03-02-2023"
+output:
+ xaringan::moon_reader:
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      slideNumberFormat: "%current% / %total%"
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+
+# see slide on xaringanthemer
+library(xaringanthemer)
+style_duo_accent(
+primary_color = "#9D1535", # stevens marron
+secondary_color = "#807f83", # grey
+#style_mono_accent(
+#  base_color = "#4f2683",
+header_font_google = google_font("Josefin Sans", "600"),
+text_font_google = google_font("Montserrat", "400", "400i"),
+code_font_google = google_font("Fira Mono")
+)
+```
+
+# Today
+
+.pull-left[Today, we'll work on:
+
+###  Variable Types:
+- Numeric
+- Logical
+- Character
+- Factor
+
+###  Data Structures:
+- Data frames
+- and R operators!
+
+]
+.pull-right[
+![R](https://i0.wp.com/www.charlenecassar.com/wp-content/uploads/2019/10/R.png?w=1000&ssl=1)
+]
+
+---
+# Variable Types 
+
+.center[
+![Saw](https://screencrush.com/files/2017/11/infinitywargif7.gif?w=750&h=305&q=75)
+
+     R’s basic data types are Numeric, Logical, Character, and Factor.
+]
+
+---
+# Variable Types
+
+In R, our data (or variables) can be of different types. The main data types are:
+
+--
+
+-  **Numeric**
+
+  21, 60,000 
+
+  _e.g.,_ Age or Income...
+  
+  3, 7, 50 or 0
+  
+  _e.g.,_ Political interest or Political tolerance...
+  
+--
+
+-   **Logical**
+
+  `TRUE` or `FALSE`
+  
+  _e.g.,_  Graduated or not, Enrolled or not, US Born or not...
+  
+---
+# Variable Types
+
+In R, our data (or variables) can be of different types. The main data types are:
+
+-   **Character**
+  
+  "No I do not really know", "Student loan forgiveness"
+  
+  _e.g.,_ Cause of inflation or Name a policy of President Biden...
+  
+--
+
+-   **Factor**
+
+  Numeric codes with character-valued meaning (categorical).
+  
+  _e.g.,_ Race, College Major, U.S. State... 
+  
+---
+# Variable Types
+
+.center[
+
+**We need to be aware of the type (class) of our data.**
+]
+
+--
+
+.center[
+**R Functions and Operators that we use to transform and manipulate our data only work with some specific data types.**
+]
+
+--
+
+- We can check for a variable type using the `class()` function or also specific logical functions for each variable type
+
+  `is.numeric()`
+  `is.logical()`
+  `is.character()`
+  `is.factor()`
+
+---
+
+# Data Structures
+
+.center[
+![Saw](https://townsquare.media/site/442/files/2017/11/infinitywar8.gif?w=750&q=75)
+
+**Data frames** are the most common type of data structure used in modern data analytics.
+]
+---
+# Data Structures
+Different types of data can be combined to form **Data frames**. They have two dimensions: 
+
+--
+-   **rows** (or observations).
+
+--
+-   **columns** (or variables).
+
+--
+
+
+Data frames are data displayed in a format as a table.
+
+
+```{r, echo=FALSE, include=FALSE}
+require(dplyr); require(kableExtra); require(formatR)
+minidf<-data.frame(
+  "name"=c("Juan", "Maia", "Fred", "Sasha", "Rachel"), # Individuals/UserIDs
+  "age"=c(23, 22, 44, 26, 30), # Age in years
+  "gender"=c(2, 1, 2, 3, 3), # Female 3, Male 2, Nonbinary 1
+  "race"=c("Black", "White", "Hispanic", "Hispanic", "White"),
+  "ideology"=c(7, 3, 4, 5, 1), # 7-point scale: left (1) and right (7)
+  "vaccinated"=c(FALSE, TRUE, TRUE, TRUE, TRUE) # Logical
+)
+minidf$gender<-factor(minidf$gender, levels=c(1,2,3), labels=c("Non-binary", "Men", "Women"))
+```
+```{r, echo=FALSE}
+minidf %>%
+    kbl() %>%
+    kable_classic(full_width = F, html_font = "Roboto")
+```
+
+Here, `minidf` has 5 observations (`rows`) and 6 variables (`columns`). 
+---
+# Data Structures
+```{r}
+str(minidf)
+```
+Data frames can have different types of data inside it. However, each column should have the same type of data.
+---
+# R Operators
+
+.center[
+![Saw](https://capricho.abril.com.br/wp-content/uploads/2019/04/vingadores-originais-gif.gif)
+
+An operator is a symbol that tells R to perform specific mathematical or logical manipulations.
+]
+
+---
+## Numerical operators
+
+R has several **math operators** for numeric data. These operators perform **arithmetic operations**. For example:
+
+--
+```{r}
+5+10; 5-10
+```
+
+```{r}
+5/10; 5*10
+```
+
+```{r}
+5^10
+```
+---
+## Logical operators
+
+Logical operators are useful for **logical tests** or **comparison tests**, and they always output **TRUE** or **FALSE**. The most common ones are: `==`, `!=`, `>`, and `<` 
+
+--
+```{r}
+5 == 10
+```
+
+```{r}
+5 != 10
+```
+
+```{r}
+5 > 10; 5 < 10
+```
+---
+## Assignment operators
+
+These operators in R allows you to assign data to a variable in order to store the data. The left arrow operator (**<-**) is used to create or change variables.
+```{r}
+minidf$vote2022<-c(TRUE, TRUE, TRUE, FALSE, FALSE)
+```
+```{r, echo=FALSE}
+minidf %>%
+    kbl() %>%
+    kable_classic(full_width = F, html_font = "Roboto")
+```
+--
+
+
+The dollar sign operator (**$**) is used to access variables in data frames.
+
+```{r}
+minidf$name
+```
+---
+
+## RStudio Today
+
+.center[
+1. We will learn some of the most common variable types transformation.
+
+2. We will learn some of R functions to explore our data structure.
+
+
+![R](https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png)
+]
