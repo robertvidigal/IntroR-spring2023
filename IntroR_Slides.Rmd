@@ -241,13 +241,15 @@ minidf$name
 ```
 ---
 
-## RStudio Today
+## R coding
 
 .center[
-1. We will learn some of the most common variable types transformation.
-
-2. We will learn some of R functions to explore data frames structure.
-
 
 ![R](https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png)
 ]
+
+
+- R code available at: **https://github.com/robertvidigal/IntroR-spring2023**
+
+
+- RStudio is also available online: **http://rstudio.cloud**
