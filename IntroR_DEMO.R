@@ -3,8 +3,8 @@
 # College of Arts and Sciences
 # Purpose: Introduction to R - Class 2
 # Author: Robert Vidigal
-# Version: March 2nd
-# Class materials available at: http://github.com/
+# Version: March 7th
+# Class materials available at: https://github.com/robertvidigal/IntroR-spring2023
 # RStudio is also available online: http://rstudio.cloud
 ###########################################################################
 

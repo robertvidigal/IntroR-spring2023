@@ -3,7 +3,7 @@ title: "Variable Types"
 subtitle: "and Data Structures"
 author: "Robert Vidigal"
 institute: "Introduction to R DEMO \n Stevens Institute of Technology"
-date: "03-02-2023"
+date: "03-07-2023"
 output:
  xaringan::moon_reader:
     css: xaringan-themer.css
@@ -222,7 +222,7 @@ Logical operators are useful for **logical tests** or **comparison tests**, and 
 ---
 ## Assignment operators
 
-These operators in R allows you to assign data to a variable in order to store the data. The left arrow operator (**<-**) is used to create or change variables.
+These operators in R allows you to assign data to a variable in order to store the data. The left arrow operator ```(<-)``` is used to create or change variables.
 ```{r}
 minidf$vote2022<-c(TRUE, TRUE, TRUE, FALSE, FALSE)
 ```
@@ -246,7 +246,7 @@ minidf$name
 .center[
 1. We will learn some of the most common variable types transformation.
 
-2. We will learn some of R functions to explore our data structure.
+2. We will learn some of R functions to explore data frames structure.
 
 
 ![R](https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png)
