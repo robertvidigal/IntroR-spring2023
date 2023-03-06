@@ -5,9 +5,9 @@ Robert Vidigal, Ph.D.
 
 Class 1 - Introduction to RStudio
 
-Class 2 - Data types and Data Structures
+Class 2 - Variable types and data frames structure
 
-Class 3 - Reading and exporting data
+Class 3 - Reading and exporting data in RStudio
 
 .
 .
