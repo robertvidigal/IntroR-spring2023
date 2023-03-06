@@ -33,7 +33,7 @@ code_font_google = google_font("Fira Mono")
 
 # Today
 
-.pull-left[Today, we'll work on:
+.pull-left[We will work on:
 
 ###  Variable Types:
 - Numeric
@@ -62,7 +62,7 @@ code_font_google = google_font("Fira Mono")
 ---
 # Variable Types
 
-In R, our data (or variables) can be of different types. The main data types are:
+In R, data (or variables) can be of different types. The main data types are:
 
 --
 
@@ -87,7 +87,7 @@ In R, our data (or variables) can be of different types. The main data types are
 ---
 # Variable Types
 
-In R, our data (or variables) can be of different types. The main data types are:
+In R, data (or variables) can be of different types. The main data types are:
 
 -   **Character**
   
@@ -114,12 +114,12 @@ In R, our data (or variables) can be of different types. The main data types are
 --
 
 .center[
-**R Functions and Operators that we use to transform and manipulate our data only work with some specific data types.**
+**R Functions and Operators only work with some specific data types.**
 ]
 
 --
 
-- We can check for a variable type using the `class()` function or also specific logical functions for each variable type
+- We can check for a variable type using the `class()` function or specific logical functions:
 
   `is.numeric()`
   `is.logical()`
@@ -133,7 +133,7 @@ In R, our data (or variables) can be of different types. The main data types are
 .center[
 ![Saw](https://townsquare.media/site/442/files/2017/11/infinitywar8.gif?w=750&q=75)
 
-**Data frames** are the most common type of data structure used in modern data analytics.
+**Data frames** are the most common data structure used in social sciences data analytics.
 ]
 ---
 # Data Structures
@@ -148,7 +148,7 @@ Different types of data can be combined to form **Data frames**. They have two d
 --
 
 
-Data frames are data displayed in a format as a table.
+Data frames are usually displayed as a table.
 
 
 ```{r, echo=FALSE, include=FALSE}
@@ -175,7 +175,7 @@ Here, `minidf` has 5 observations (`rows`) and 6 variables (`columns`).
 ```{r}
 str(minidf)
 ```
-Data frames can have different types of data inside it. However, each column should have the same type of data.
+**Note:** each data frame column must have the same type of variable.
 ---
 # R Operators
 
@@ -222,7 +222,7 @@ Logical operators are useful for **logical tests** or **comparison tests**, and 
 ---
 ## Assignment operators
 
-These operators in R allows you to assign data to a variable in order to store the data. The left arrow operator ```(<-)``` is used to create or change variables.
+These operators in R allows you to assign data to a variable. The left arrow operator `(<-)` is used to create or change variables.
 ```{r}
 minidf$vote2022<-c(TRUE, TRUE, TRUE, FALSE, FALSE)
 ```
