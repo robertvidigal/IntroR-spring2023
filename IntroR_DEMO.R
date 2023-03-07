@@ -6,7 +6,7 @@
 # Version: March 7th
 # Materials available at: https://github.com/robertvidigal/IntroR-spring2023
 ###########################################################################
-
+rm(list=ls())
 # # -----------------------------------------------------------------------
 # --- Today RStudio Topics ---
 # # -----------------------------------------------------------------------
@@ -33,17 +33,11 @@
 # and demographic characteristics.
 
 minidf<-data.frame(
-  "name"=c("Sofia", "Pedro", "Juan", "Emma", "Fred", 
-           "Sasha", "Rachel", "Erica", "Amanda", "Maya"), # Individuals
+  "name"=c("Sofia", "Pedro", "Juan", "Emma", "Fred", "Sasha", "Rachel", "Erica", "Amanda", "Maya"), # Individuals
   "age"=c(23, 22, 44, 56, 90, 18, 77, 31, 20, 23), # Age in years
   "gender"=c(1, 0, 0, 1, 0, 0, 1, 1, 1, 2), # Men 0, Women 1, Non-binary 2
-  "ethnicity"=c("Non-hispanic", "Hispanic", 
-                "Non-hispanic", "Non-hispanic", 
-                "Non-hispanic", "Non-hispanic", 
-                "Non-hispanic", "Non-hispanic", 
-                "Hispanic", "Non-hispanic"), # Hispanic Ethnicity
-  "income"=c(25000, 50000, 28000, 60000, 19000, 
-             25000, 33000, 77000, 50000, 64000), # Income per YEAR in USD
+  "ethnicity"=c("Non-hispanic", "Hispanic", "Non-hispanic", "Non-hispanic", "Non-hispanic", "Non-hispanic", "Non-hispanic", "Non-hispanic", "Hispanic", "Non-hispanic"), # Hispanic Ethnicity
+  "income"=c(25000, 50000, 28000, 60000, 19000, 25000, 33000, 77000, 50000, 64000), # Income per YEAR in USD
   "ideology"=c(1, 3, 4, 5, 4, 5, 6, 7, 2, 4), # 7-point: extreme left (1) to extreme right (7)
   "extraversion"=c(0.22, 0, 0.77, 1, 0.67, 0.45, 0.65, 0.5, 0.77, 0.22), # Ranges from 0 to  1
   "polknow"=c(2, 3, 4, 5, 6, 2, 0, 4, 3, 6), # Ranges from 0 to 6
@@ -61,15 +55,15 @@ minidf; print(minidf) #
 View(minidf) # 
 
 # -- Attributes functions
-names(minidf) # 
-nrow(minidf) # 
-ncol(minidf) #
-str(minidf) #
+names(minidf) # Name of columns
+nrow(minidf) # Number of rows
+ncol(minidf) # Number of columns
+str(minidf) # Structure
 
 # -- Class functions
-class(minidf$race)
-is.factor(minidf$race) # 
-is.logical(minidf$vote2022) # 
+class(minidf$ethnicity)
+is.factor(minidf$ethnicity) # FALSE
+is.logical(minidf$vote2022) # TRUE
 !is.numeric(minidf$age) # 
 !is.character(minidf$name) # 
 
